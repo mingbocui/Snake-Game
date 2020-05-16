@@ -1,21 +1,21 @@
-#include "move.h"
+#include "step.h"
 #include <iostream>
 
 // constructor
-Move::Move(SDL_Point* food, Snake* snake) : _food(food), _snake(snake) { std::cout << "Prepare to move" << "\n"; };
+Step::Step(SDL_Point* food, Snake* snake) : _food(food), _snake(snake) { std::cout << "Prepare to move" << "\n"; };
 // destructor
-Move::~Move(){ std::cout << "Destory Move object" << "\n"; };
+Step::~Step(){ std::cout << "Destory Move object" << "\n"; };
 
-bool Move::check_align_x()
+bool Step::check_align_x()
 {
     return _food->x == static_cast<int>(_snake->head_x);
 }
-bool Move::check_align_y()
+bool Step::check_align_y()
 {
     return _food->y == static_cast<int>(_snake->head_y);
 }
 
-void Move::single_move()
+void Step::single_step()
 {
     int curr_head_x = static_cast<int>(snake->head_x);
     int curr_head_y = static_cast<int>(snake->head_y);

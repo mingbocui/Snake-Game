@@ -6,7 +6,9 @@
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"
-#include "move.h"
+#include "step.h"
+
+#include <memory> // for unique_ptr
 
 class Game {
  public:
@@ -20,7 +22,7 @@ class Game {
   Snake snake;
   SDL_Point food;
   // owning
-  std::unique_ptr<Move> move;
+  std::unique_ptr<Step> step;
 
   std::random_device dev;
   std::mt19937 engine;
@@ -31,7 +33,7 @@ class Game {
 
   void PlaceFood();
   void Update();
-  void ResetMove();
+  void ResetStep();
 };
 
 #endif

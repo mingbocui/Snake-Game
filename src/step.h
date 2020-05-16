@@ -1,15 +1,15 @@
-#ifndef MOVE_H
-#define MOVE_H
+#ifndef STEP_H
+#define STEP_H
 
 #include "snake.h"
 #include "SDL.h"
 
-class Move
+class Step
 {
 public:
-    Move(SDL_Point* food, Snake* snake);
-    ~Move();
-    void single_move();
+    Step(SDL_Point* food, Snake* snake);
+    ~Step();
+    void single_step();
     bool check_align_x();
     bool ckeck_align_y();
 private:
