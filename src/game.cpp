@@ -7,8 +7,13 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
       engine(dev()),
       random_w(0, static_cast<int>(grid_width)),
       random_h(0, static_cast<int>(grid_height)) {
+  ResetMove();  
   PlaceFood();
 }
+
+
+// when game restart, reset the unique_ptr
+void Game::ResetMove(){ move.reset(new Move(&food, &snake)); }
 
 void Game::Run(Controller const &controller, Renderer &renderer,
                std::size_t target_frame_duration) {
@@ -21,6 +26,8 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
   while (running) {
     frame_start = SDL_GetTicks();
+
+    move->single_move();
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
