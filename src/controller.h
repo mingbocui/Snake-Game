@@ -1,6 +1,6 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
-
+// #pragma once
 #include "snake.h"
 
 class Controller {

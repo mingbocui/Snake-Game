@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
-
+// #pragma once
 #include <random>
 #include "SDL.h"
 #include "controller.h"

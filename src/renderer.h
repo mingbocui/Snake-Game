@@ -1,6 +1,6 @@
 #ifndef RENDERER_H
 #define RENDERER_H
-
+// #pragma once
 #include <vector>
 #include "SDL.h"
 #include "snake.h"
